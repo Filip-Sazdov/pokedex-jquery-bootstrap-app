@@ -10,7 +10,80 @@
             crossorigin="anonymous">
         <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     </head>
-    <body>
+    <body class="bg-secondary">
+        <header class="w-75 mx-auto">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+                <a class="navbar-brand"
+                    href="https://filip-sazdov.github.io/portfolio/">Filip's
+                    Portfolio</a>
+                <button class="navbar-toggler" type="button"
+                    data-toggle="collapse" data-target="#navbarColor02"
+                    aria-controls="navbarColor02" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                    <form class="form-inline my-2 my-lg-0 ml-auto">
+                        <input class="form-control mr-sm-2" type="text"
+                            placeholder="Search for Pokemon" title="Type in a
+                            Pokemon name">
+                        <button class="btn btn-secondary my-2 my-sm-0"
+                            type="button">Clear
+                            Search</button>
+                    </form>
+                </div>
+            </nav>
+
+        </header>
+        <main class="w-100 container border border-primary mx-auto">
+            <h1 class="text-center mt-5">Pokédex</h1>
+            <p class="text-center w-50 mb-5 mx-auto">The purpose of this website
+                is to
+                demonstrate my proficiency in jQuery and
+                Bootstrap. The
+                original version of this Pokédex was created exclusively using
+                HTML, CSS,
+                and vanilla JavaScript and exists <a class="font-weight-bold
+                    text-warning"
+                    href="https://filip-sazdov.github.io/pokedex-js-app/">here</a>.
+                Another version built using vanilla JavaScript and Bootstrap
+                exists <a class="font-weight-bold
+                    text-warning"
+                    href="https://filip-sazdov.github.io/pokedex-bootstrap-app/">here</a>.</p>
+            <div id="pokemon-grid" class=" border border-primary w-100 m-0">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card text-center m-1">
+                            <img class="card-img-top" src="img_avatar1.png" alt="gif
+                            of Pokemon">
+                            <div class="card-body">
+                                <button class="btn btn-primary btn-lg"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content border border-warning bg-dark">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </main>
 
 
 
