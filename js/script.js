@@ -144,12 +144,9 @@ pokemonRepository.loadDataFromApi().then(function () {
 });
 
 function searchByName() {
-	let filter, gridContainer, cards, a, txtValue;
+	let filter, cards, a, txtValue;
 	filter = $('#input').val().toUpperCase();
-	// gridContainer = document.getElementById('pokemon-grid');
-	// cards = gridContainer.querySelectorAll('.card');
 	cards = $('#pokemon-grid .card');
-	console.log(cards);
 	for (i = 0; i < cards.length; i++) {
 		a = cards[i].querySelector('.card-body').querySelector('.btn');
 
