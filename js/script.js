@@ -1,6 +1,6 @@
 let pokemonRepository = (function () {
 	let pokemonList = [];
-	let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+	let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=60';
 
 	function addToPokemonList(pokemonFromApi) {
 		pokemonList.push(pokemonFromApi);
@@ -49,7 +49,7 @@ let pokemonRepository = (function () {
 		loadDetails(pokemon).then(() => {
 			let pokemonGrid = $('.row');
 			let cardContainer = $('<div></div>').addClass('col-xs col-sm-6 col-md-4');
-			let card = $('<div></div>').addClass('card text-center bg-light my-2 border border-warning');
+			let card = $('<div></div>').addClass('card pokemon-card text-center bg-light my-2 border border-warning');
 
 			let cardImg = $('<img>')
 				.addClass('card-img-top mx-auto my-3')
@@ -141,4 +141,30 @@ pokemonRepository.loadDataFromApi().then(function () {
 	pokemonRepository.getPokemonListContents().forEach((pokemon) => {
 		pokemonRepository.addToDom(pokemon);
 	});
+});
+
+function searchByName() {
+	let filter, gridContainer, cards, a, txtValue;
+	filter = $('#input').val().toUpperCase();
+	// gridContainer = document.getElementById('pokemon-grid');
+	// cards = gridContainer.querySelectorAll('.card');
+	cards = $('#pokemon-grid .card');
+	console.log(cards);
+	for (i = 0; i < cards.length; i++) {
+		a = cards[i].querySelector('.card-body').querySelector('.btn');
+
+		txtValue = a.textContent || a.innerText;
+		if (txtValue.toUpperCase().indexOf(filter) > -1) {
+			cards[i].style.display = '';
+		} else {
+			cards[i].style.display = 'none';
+		}
+	}
+}
+let inputElement = $('#input');
+inputElement.on('keyup', searchByName);
+
+let clearSearchButton = $('#clear-search');
+clearSearchButton.on('click', function () {
+	$('#input').val('').trigger('keyup');
 });
